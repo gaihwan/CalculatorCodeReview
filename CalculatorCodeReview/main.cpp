@@ -14,8 +14,8 @@ TEST(t1, t2) {
 }
 
 TEST(t1, getMinus1) {
-    Cal* cal = new Cal();
-    int result = cal->getMinus(2, 1);
+    Cal cal;
+    int result = cal.getMinus(2, 1);
     EXPECT_EQ(1, result);
 }
 

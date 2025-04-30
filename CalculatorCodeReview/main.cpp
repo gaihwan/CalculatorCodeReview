@@ -4,12 +4,9 @@ class Cal {
 public:
     // 이곳에 코드 작성
     int getSum(int a, int b) const { return a + b; }
-
     int getZegop(int a) const { return a * a; }
-
-    int getMinus(int a, int b) {
-        return a - b;
-    }
+    int getGop(int a, int b) const { return a * b; }
+    int getMinus(int a, int b) const { return a - b;}
 };
 
 // 테스트 케이스 작성
@@ -28,6 +25,14 @@ TEST(t1, zegop2) {
     Cal cal;
     int actual = cal.getZegop(10);
     EXPECT_EQ(100, actual);
+
+}
+
+TEST(t1, GopTestsuite) {
+    Cal test;
+    int expectedValue = 100;
+    int resultValue = test.getGop(10, 10);
+    EXPECT_EQ(expectedValue, resultValue);
 }
 
 TEST(t1, getMinus1) {

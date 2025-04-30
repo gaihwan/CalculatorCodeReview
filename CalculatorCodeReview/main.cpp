@@ -7,10 +7,14 @@ public:
     int getZegop(int a) const { return a * a; }
     int getGop(int a, int b) const { return a * b; }
     int getMinus(int a, int b) const { return a - b;}
+    int getDivide(int a, int b) const {
+        if (b == 0) throw std::exception("Division by zero");
+        return a / b;
+    }
 };
 
 // 테스트 케이스 작성
-TEST(t1, t2) {
+TEST(t1, SumTest) {
     Cal cal;
     EXPECT_EQ(cal.getSum(2389, 1082), 3471);
 }
@@ -39,6 +43,11 @@ TEST(t1, getMinus1) {
     Cal cal;
     int result = cal.getMinus(2, 1);
     EXPECT_EQ(1, result);
+}
+
+TEST(t1, DivideTest) {
+    Cal cal;
+    EXPECT_EQ(cal.getDivide(81604, 23), 3548);
 }
 
 int main() {

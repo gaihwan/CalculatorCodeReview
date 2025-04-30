@@ -6,6 +6,7 @@ public:
     int getSum(int a, int b) const { return a + b; }
     int getZegop(int a) const { return a * a; }
     int getGop(int a, int b) const { return a * b; }
+    int getMinus(int a, int b) const { return a - b;}
 };
 
 // 테스트 케이스 작성
@@ -32,7 +33,13 @@ TEST(t1, GopTestsuite) {
     int expectedValue = 100;
     int resultValue = test.getGop(10, 10);
     EXPECT_EQ(expectedValue, resultValue);
+}
 
+TEST(t1, getMinus1) {
+    Cal cal;
+    int result = cal.getMinus(2, 1);
+    EXPECT_EQ(1, result);
+}
 
 int main() {
     ::testing::InitGoogleMock();
